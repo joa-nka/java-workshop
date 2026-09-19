@@ -4,6 +4,7 @@ _Your Mission_
 A suspicious €50,000 transaction has been detected.
 Your task is to investigate the transaction, follow the money trail, identify the account owner and create an investigation.
 During the investigation, you will use a REST API and Swagger UI to work with the available data.
+Swagger UI: http://localhost:8080/swagger-ui/index.html#/
 
 _Your Goal_
 By the end of the investigation, you should be able to answer:
