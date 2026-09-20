@@ -29,19 +29,6 @@ public class InvestigationRepository {
         return investigation;
     }
 
-    public Investigation create(Long transactionId, String reason) {
-        Investigation investigation = new Investigation(
-                nextId++,
-                transactionId,
-                reason,
-                "OPEN"
-        );
-
-        investigations.add(investigation);
-
-        return investigation;
-    }
-
     public void delete(Long id) {
         investigations.removeIf(
                 investigation -> investigation.getId().equals(id)

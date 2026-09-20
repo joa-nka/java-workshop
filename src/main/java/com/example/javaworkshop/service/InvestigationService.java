@@ -23,9 +23,6 @@ public class InvestigationService {
         return investigationRepository.findById(id);
     }
 
-    public Investigation createInvestigation(Long transactionId, String reason) {
-        return investigationRepository.create(transactionId, reason);
-    }
 
     public Investigation updateInvestigation(Long id, String status, String reason) {
 
