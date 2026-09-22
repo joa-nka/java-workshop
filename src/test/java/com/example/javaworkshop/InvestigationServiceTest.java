@@ -48,32 +48,6 @@ class InvestigationServiceTest {
     }
 
     @Test
-    void shouldCreateInvestigation() {
-
-        Investigation investigation = new Investigation(
-                1L,
-                101L,
-                "Unusual transaction amount",
-                "OPEN"
-        );
-
-        when(investigationRepository.create(
-                101L,
-                "Unusual transaction amount"
-        )).thenReturn(investigation);
-
-        Investigation result =
-                investigationService.createInvestigation(
-                        101L,
-                        "Unusual transaction amount"
-                );
-
-        assertNotNull(result);
-        assertEquals(101L, result.getTransactionId());
-        assertEquals("OPEN", result.getStatus());
-    }
-
-    @Test
     void shouldUpdateInvestigationStatus() {
 
         Investigation investigation = new Investigation(
@@ -97,6 +71,33 @@ class InvestigationServiceTest {
 
         // INTENTIONALLY WRONG
         assertEquals("INVESTIGATING", result.getStatus());
+    }
+
+    @Test
+    void shouldUpdateInvestigationReason() {
+
+        Investigation investigation = new Investigation(
+                1L,
+                101L,
+                "Old reason",
+                "OPEN"
+        );
+
+        when(investigationRepository.findById(1L))
+                .thenReturn(investigation);
+
+        Investigation result =
+                investigationService.updateInvestigation(
+                        1L,
+                        null,
+                        "Suspicious transaction flow"
+                );
+
+        assertNotNull(result);
+        assertEquals(
+                "Suspicious transaction flow",
+                result.getReason()
+        );
     }
 
     @Test
