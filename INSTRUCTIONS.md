@@ -1,7 +1,7 @@
 **Crime Investigation API - Participant Guide**
 
 _Your Mission_
-A suspicious €50,000 transaction has been detected.
+A suspicious transaction has been detected.
 Your task is to investigate the transaction, follow the money trail, identify the account owner and create an investigation.
 During the investigation, you will use a REST API and Swagger UI to work with the available data.
 Swagger UI: http://localhost:8080/swagger-ui/index.html#/
@@ -9,6 +9,12 @@ Swagger UI: http://localhost:8080/swagger-ui/index.html#/
 _Your Goal_
 By the end of the investigation, you should be able to answer:
 Who is behind the suspicious transaction?
+
+_Suspicious Transaction Criteria_
+A transaction is considered suspicious if it meets one or more of the following criteria:
+1. The transaction amount is greater than or equal to €50,000.
+2. The transaction involves a currency other than EUR.
+3. The same account is involved in more than 3 transactions within a short period.
 
 _Available Operations_
 * GET - find and inspect information
