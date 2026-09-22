@@ -68,8 +68,6 @@ class InvestigationServiceTest {
                 );
 
         assertNotNull(result);
-
-        // INTENTIONALLY WRONG
         assertEquals("INVESTIGATING", result.getStatus());
     }
 
